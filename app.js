@@ -15,22 +15,24 @@ if (amigo.value ==''){
     return;
 }
 
-
+//chegar se o nome ja existe no array
 if (amigosArray.includes(amigo.value)){
     alert('Adicione um nome diferente do ja adicionado');
     return;
 }
 
 //variável para colocar o nome do amigo na lista
-let listaAmigos = document.getElementById('listaAmigos');
+let nomeAmigo = amigo.value.trim().toUpperCase(); // Obtém o valor do input e remove espaços em branco
 
-//função que coloca o nome dos amigos digitados na lista
-amigosArray.push(amigo.value);
-if (listaAmigos.textContent == '') {
-    listaAmigos.textContent = amigo.value;
-} else {
-    listaAmigos.textContent = listaAmigos.textContent + ', ' + amigo.value;
-}
-amigo.value = ''
+    if (nomeAmigo) { // Verifica se o nome não está vazio
+        amigosArray.push(nomeAmigo); // Adiciona o novo nome ao array
+
+        let liElement = document.createElement('li'); // Cria um novo elemento <li>
+        liElement.textContent = nomeAmigo; // Define o texto do <li> como o novo nome digitado
+        listaAmigos.appendChild(liElement); // Adiciona o <li> à <ul>
+
+        amigo.value = ''; // Limpa o campo de input
+    }
 }
 
+//Card - Implementa uma função para atualizar a lista de amigos
