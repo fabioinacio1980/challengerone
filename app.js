@@ -4,25 +4,24 @@
 let amigosArray = [];
 
 //Card - Implementa uma função para agregar amigos
-
 function adicionarAmigo() {
-//variavel para pegar o valor do nome do amigo
+    //variavel para pegar o valor do nome do amigo
 let amigo = document.getElementById('amigo');
 
-//checar se o campo está preenchido
+    //checar se o campo está preenchido
 if (amigo.value ==''){
     alert('Por favor, insira um nome.');
     return;
 }
 
-//chegar se o nome ja existe no array
-if (amigosArray.includes(amigo.value)){
+    //chegar se o nome ja existe no array
+    //variável para colocar o nome do amigo na lista
+let nomeAmigo = amigo.value.trim().toUpperCase(); // Obtém o valor do input e remove espaços em branco
+
+if (amigosArray.includes(nomeAmigo)){
     alert('Adicione um nome diferente do ja adicionado');
     return;
 }
-
-//variável para colocar o nome do amigo na lista
-let nomeAmigo = amigo.value.trim().toUpperCase(); // Obtém o valor do input e remove espaços em branco
 
     if (nomeAmigo) { // Verifica se o nome não está vazio
         amigosArray.push(nomeAmigo); // Adiciona o novo nome ao array
