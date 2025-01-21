@@ -35,3 +35,9 @@ if (amigosArray.includes(nomeAmigo)){
 }
 
 //Card - Implementa uma função para atualizar a lista de amigos
+function limparLista() {
+    amigosArray = [];
+    document.getElementById('listaAmigos').innerHTML = '';
+    document.getElementById('resultado').innerHTML = '';
+}
+
